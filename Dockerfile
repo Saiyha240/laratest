@@ -6,7 +6,8 @@ ADD . /app
 
 EXPOSE 80
 
-RUN apt-get install -y \
+RUN apt-get update \
+  && apt-get install -y \
         libzip-dev \
         zip \
   && docker-php-ext-configure zip --with-libzip \
